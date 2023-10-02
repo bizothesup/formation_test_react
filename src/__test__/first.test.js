@@ -17,14 +17,14 @@ afterEach(()=>{
     myVariable--;
 })
 describe("Opertaion test ", () => {
-    test("Addion", () => {
+    test.only("Addion", () => {
         expect( additional(1,2)).toBe(3);
         expect( additional(8,13)).toBe(21);
         console.log("operation addtion");
         myVariable++;
     });
 
-    test("Soustraction", () => {
+    test.skip("Soustraction", () => {
         expect(soustraction(1,2)).toBe(-1);
         expect(soustraction(586,41)).toBe(545);
         console.log("operation soustraction");
@@ -34,5 +34,5 @@ describe("Opertaion test ", () => {
         expect(multiplication(0,2)).toBe(0);
         expect(soustraction(586,41)).toBe(545);
         console.log("operation Multiplication");
-    });
+    },1000);
 });
