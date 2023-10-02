@@ -1,3 +1,5 @@
+//trois en groupe render {getBy,queryBy,findBy}
+
 import  React from 'react';
 import Hello from "./Hello";
 import {render} from '@testing-library/react'
