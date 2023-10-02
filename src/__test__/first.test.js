@@ -1,5 +1,12 @@
 import {additional,soustraction,multiplication} from '../operations/addition'
 let myVariable =1;
+let numbers=[1,2,3]
+let complexarry =[
+    [1,2,3],
+    [4,5,9],
+    [1,59,60],
+    [1,8,9],
+]
 beforeAll(() => {
   console.log('This before All function')
 })
@@ -17,15 +24,17 @@ afterEach(()=>{
     myVariable--;
 })
 describe("Opertaion test ", () => {
-    test.only("Addion", () => {
+    test("Addion", () => {
         expect( additional(1,2)).toBe(3);
         expect( additional(8,13)).toBe(21);
         console.log("operation addtion");
         myVariable++;
     });
-
-    test.skip("Soustraction", () => {
-        expect(soustraction(1,2)).toBe(-1);
+test.each(complexarry)("Addtion Complex Array %i to %i should be %i", (x,y,total) => {
+    expect( additional(x,y)).toBe(total);
+})
+    test.each(numbers)("Soustraction", myNum => {
+        expect(soustraction(1,myNum)).toBe(1-myNum);
         expect(soustraction(586,41)).toBe(545);
         console.log("operation soustraction");
 
